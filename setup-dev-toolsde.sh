@@ -86,7 +86,7 @@ sudo mv k9s /usr/local/bin
 rm k9s.tgz
 
 #######################################
-# kubectx & kubens
+# kubectx & kubens installation
 #######################################
 echo "🔧 kubectx und kubens werden installiert..."
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx || echo "🔁 Bereits vorhanden."
