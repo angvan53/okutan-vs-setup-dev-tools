@@ -18,3 +18,6 @@ chmod +x setup-dev-tools.sh
 # Kurulum tamamlandığında, kullanıcıya kurulumun başarıyla tamamlandığını bildiren bir mesaj gösterir.
 #!/bin/bash
 # setup-dev-tools.sh - Geliştirici Araçları Kurulumu    
+
+
+curl -sSL https://raw.githubusercontent.com/angvan53/setup-dev-tools/main/setup-dev-tools.sh | bash
