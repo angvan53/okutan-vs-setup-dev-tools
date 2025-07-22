@@ -1,3 +1,21 @@
+# 🚀 DevOps Setup Script
+
+Bu betik, WSL/Ubuntu sisteminize şu araçları otomatik olarak kurar:
+
+- GitHub CLI
+- Terraform
+- Docker + Compose
+- kubectl
+- Helm
+- Ansible
+- yq, k9s, kubectx, kubens, terraform-docs
+
+## Kullanım
+
+```bash
+curl -sSL https://raw.githubusercontent.com/angvan53/setup-dev-tools/main/setup-dev-tools.sh | bash
+
+
 #!/bin/bash
 
 # Entwickler-Toolchain-Installation für WSL + Ubuntu
