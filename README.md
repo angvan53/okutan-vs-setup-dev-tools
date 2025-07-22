@@ -2,7 +2,7 @@
 
 # Entwickler-Toolchain-Installation für WSL + Ubuntu
 # Dieses Skript installiert verschiedene DevOps-Tools unter Ubuntu im WSL-Umfeld.
-# Autor: [Senin Adın] – Datum: 2025
+# Autor: M Okutan – Datum: 2025
 
 set -e
 
