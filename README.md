@@ -143,3 +143,87 @@ echo -n "terraform-docs:   "; terraform-docs --version
 
 echo ""
 echo "✅ Die DevOps-Tools wurden erfolgreich für die WSL-Umgebung installiert!"
+
+
+# 🧭 Helm Befehle – Übersicht mit Erklärungen (Deutsch)
+
+## 🧱 1. Chart- & Repository-Verwaltung
+
+| Befehl | Beschreibung |
+|--------|--------------|
+| `helm repo add <repo-name> <repo-URL>` | Fügt ein neues Helm-Repository hinzu.<br>Beispiel: `helm repo add bitnami https://charts.bitnami.com/bitnami` |
+| `helm repo list` | Zeigt alle hinzugefügten Repositories an. |
+| `helm repo update` | Aktualisiert die Repositories (lädt aktuelle Charts). |
+| `helm search repo <schlüsselwort>` | Durchsucht alle Repositories nach Charts.<br>Beispiel: `helm search repo mysql` |
+| `helm pull <repo/chart>` | Lädt ein Chart als `.tgz`-Datei herunter. |
+| `helm show values <repo/chart>` | Zeigt den Standardinhalt der `values.yaml` eines Charts. |
+
+---
+
+## 📦 2. Chart-Erstellung & Veröffentlichung
+
+| Befehl | Beschreibung |
+|--------|--------------|
+| `helm create <chart-name>` | Erstellt ein neues Chart-Gerüst. |
+| `helm package <chart-verzeichnis>` | Verpackt ein Chart als `.tgz`-Datei. |
+| `helm lint <chart>` | Prüft die Chart-Struktur auf Fehler. |
+| `helm dependency update` | Lädt die im `Chart.yaml` definierten Abhängigkeiten. |
+| `helm repo index <verzeichnis>` | Erstellt eine `index.yaml` für ein lokales Repository. |
+
+---
+
+## 🚀 3. Release-Management (Installation & Upgrade)
+
+| Befehl | Beschreibung |
+|--------|--------------|
+| `helm install <release-name> <chart>` | Installiert ein Chart in den Kubernetes-Cluster.<br>Beispiel: `helm install myapp ./mokutanway-chart` |
+| `helm install <name> <chart> -f custom-values.yaml` | Installiert ein Chart mit benutzerdefinierten Werten. |
+| `helm upgrade <release-name> <chart>` | Aktualisiert ein bestehendes Release mit einem neuen Chart. |
+| `helm uninstall <release-name>` | Entfernt ein bestehendes Release. |
+| `helm rollback <release> <version>` | Setzt ein Release auf eine vorherige Version zurück. |
+
+---
+
+## 🔍 4. Beobachtung & Debugging
+
+| Befehl | Beschreibung |
+|--------|--------------|
+| `helm list` | Listet alle installierten Releases auf. |
+| `helm status <release>` | Zeigt den Status eines Releases. |
+| `helm get all <release>` | Zeigt alle Informationen zu einem Release (Manifest, Values usw.). |
+| `helm get values <release>` | Zeigt die verwendeten `values.yaml`-Werte eines Releases. |
+| `helm template <chart>` | Rendert das Chart in Kubernetes-Manifeste (ohne Installation). |
+
+---
+
+## 🧪 5. Test & Dry-Run
+
+| Befehl | Beschreibung |
+|--------|--------------|
+| `helm install --dry-run --debug ...` | Simuliert eine Installation (zeigt, was passieren würde). |
+| `helm test <release>` | Führt Tests für ein Release aus (falls vorhanden). |
+
+---
+
+## ⚙️ 6. Zusätzliche Optionen
+
+| Option | Beschreibung |
+|--------|--------------|
+| `--namespace <namespace>` | Führt den Befehl in einem bestimmten Namespace aus. |
+| `--set schlüssel=wert` | Überschreibt Werte direkt über die Kommandozeile. |
+| `--values <datei.yaml>` oder `-f` | Verwendet eine benutzerdefinierte `values.yaml`-Datei. |
+
+---
+
+## 🧪 Beispielhafte Befehlsfolge
+
+```bash
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+helm search repo nginx
+helm install mynginx bitnami/nginx
+helm list
+helm get values mynginx
+helm upgrade mynginx bitnami/nginx -f neue-werte.yaml
+helm uninstall mynginx
+
